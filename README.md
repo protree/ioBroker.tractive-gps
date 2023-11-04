@@ -83,7 +83,7 @@ Or you can use the tab **files** to upload the file. (see image below)\
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 1.0.0 (2023-11-04)
 * (mcm1957) Adapter has been moved into iobroker-community-adapters organisation
 * (mcm1957) Dependencies have been updated
 

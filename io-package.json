@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "tractive-gps",
-    "version": "1.0.0-alpha.0",
+    "version": "1.0.0",
     "news": {
+      "1.0.0": {
+        "en": "Adapter has been moved into iobroker-community-adapters organisation\nDependencies have been updated",
+        "de": "Adapter wurde in iobroker-community-Adapter Organisation verschoben\nAbhängigkeiten wurden aktualisiert",
+        "ru": "Адаптер переехал в организацию iobroker-community-adapters\nВ зависимости были обновлены",
+        "pt": "Adapter foi transferido para a organização iobroker-community-adapters\nAs dependências foram atualizadas",
+        "nl": "Adapter is verplaatst naar iobroker-community-papters organisatie\nAfhankelijkheid",
+        "fr": "L'adaptateur a été déplacé dans l'organisation iobroker-community-adapters\nLes dépendances ont été mises à jour",
+        "it": "L'adattatore è stato spostato nell'organizzazione degli adattatori della comunità-iobroker\nLe dipendenze sono state aggiornate",
+        "es": "Adaptador ha sido trasladado a la organización de ibroker-community-adapters\nSe han actualizado las dependencias",
+        "pl": "Adapter został przeniesiony do iobrokerskiej organizacji\nZależności zostały zaktualizowane",
+        "uk": "Переміщено перехід на iobroker-community-adapters\nОновлено залежність",
+        "zh-cn": "现已进入加勒比采掘器组织\n已更新了属地"
+      },
       "1.0.0-alpha.0": {
         "en": "Adapter has been moved into iobroker-community-adapters organisation\nDependencies have been updated",
         "de": "Adapter wurde in iobroker-community-Adapter Organisation verschoben\nAbhängigkeiten wurden aktualisiert",
