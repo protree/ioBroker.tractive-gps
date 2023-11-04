@@ -3,18 +3,18 @@
 import * as utils from '@iobroker/adapter-core';
 // Load your modules here, e.g.:
 // import 'source-map-support/register.js';
-import { TractiveDevice } from './types/TractiveDevice';
 import axios from 'axios';
 import { CronJob } from 'cron';
-import { stateAttrb } from './lib/object_definition';
 import sourceMapSupport from 'source-map-support';
 import { decrypt, encrypt } from './lib/Helper';
+import { stateAttrb } from './lib/object_definition';
+import { TractiveDevice } from './types/TractiveDevice';
 
 sourceMapSupport.install();
 // Global variables here
 
 class TractiveGPS extends utils.Adapter {
-	private requestTimer: ioBroker.Timeout | null;
+	private requestTimer?: ioBroker.Timeout | null;
 	private interval: number;
 	private readonly client_id: string;
 	// private expires_at: number;
