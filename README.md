@@ -78,7 +78,6 @@ Or you can use the tab **files** to upload the file. (see image below)\
 ![files-tractive-gps.png](admin%2Fimages%2Ffiles-tractive-gps.png)
 
 
-
 ## Changelog
 <!--
     Placeholder for the next version (at the beginning of the line):
