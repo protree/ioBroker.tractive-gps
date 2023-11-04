@@ -1,177 +1,190 @@
 {
-	"common": {
-		"name": "tractive-gps",
-		"version": "0.1.2",
-		"news": {
-			"0.1.2": {
-				"en": "Dependencies updated\nUI updated",
-				"de": "Abhängigkeiten aktualisiert\nUI aktualisiert",
-				"ru": "Обновлены зависимости\nОбновлен пользовательский интерфейс",
-				"pt": "Dependências actualizadas\nUI actualizado",
-				"nl": "Afhankelijkheden bijgewerkt\nUI bijgewerkt",
-				"fr": "Dépendances mises à jour\nMise à jour de l'interface utilisateur",
-				"it": "Dipendenze aggiornate\nInterfaccia utente aggiornata",
-				"es": "Dependencias actualizadas\nInterfaz de usuario actualizada",
-				"pl": "Zależności zaktualizowane\nUaktualniony interfejs użytkownika",
-				"uk": "Оновлені залежності\nОновлений інтерфейс користувача",
-				"zh-cn": "更新了依赖性\n更新了用户界面"
-			},
-			"0.1.1": {
-				"en": "Dependencies updated",
-				"de": "Abhängigkeiten aktualisiert",
-				"ru": "Обновление зависимостей",
-				"pt": "Dependências atualizadas",
-				"nl": "Afhankelijkheden bijgewerkt",
-				"fr": "Dépendances mises à jour",
-				"it": "Dipendenze aggiornate",
-				"es": "Dependencias actualizadas",
-				"pl": "Zależności zaktualizowane",
-				"uk": "Залежності оновлено",
-				"zh-cn": "依赖项已更新"
-			},
-			"0.1.0": {
-				"en": "first release",
-				"de": "erste veröffentlichung",
-				"ru": "первый релиз",
-				"pt": "primeiro lançamento",
-				"nl": "eerste vrijlating",
-				"fr": "première version",
-				"it": "primo rilascio",
-				"es": "primera liberación",
-				"pl": "pierwsze wydanie",
-				"uk": "перший реліз",
-				"zh-cn": "首次释放"
-			}
-		},
-		"title": "Tractive GPS",
-		"titleLang": {
-			"en": "Tractive GPS",
-			"de": "Tractive GPS",
-			"ru": "Tractive GPS",
-			"pt": "Tractive GPS",
-			"nl": "Tractive GPS",
-			"fr": "Tractive GPS",
-			"it": "Tractive GPS",
-			"es": "Tractive GPS",
-			"pl": "Tractive GPS",
-			"uk": "Tractive GPS",
-			"zh-cn": "Tractive GPS"
-		},
-		"desc": {
-			"en": "This adapter allows you to connect to the Tractive GPS service and retrieve the location of your pets.",
-			"de": "Mit diesem Adapter können Sie eine Verbindung zum Tractive-GPS-Dienst herstellen und den Standort Ihrer Haustiere abrufen.",
-			"ru": "Этот адаптер позволяет подключиться к службе Tractive GPS и получить данные о местонахождении ваших питомцев.",
-			"pt": "Este adaptador permite-lhe ligar-se ao serviço Tractive GPS e recuperar a localização dos seus animais de estimação.",
-			"nl": "Met deze adapter kunt u verbinding maken met de Tractive GPS service en de locatie van uw huisdieren opvragen.",
-			"fr": "Cet adaptateur vous permet de vous connecter au service GPS Tractive et de récupérer la localisation de vos animaux domestiques.",
-			"it": "Questo adattatore consente di connettersi al servizio Tractive GPS e recuperare la posizione dei tuoi animali domestici.",
-			"es": "Este adaptador le permite conectarse al servicio Tractive GPS y recuperar la ubicación de sus mascotas.",
-			"pl": "Ten adapter pozwala połączyć się z usługą Tractive GPS i otrzymać lokalizację swoich zwierząt.",
-			"uk": "Цей адаптер дозволяє підключитися до служби Tractive GPS і отримати місцезнаходження ваших тварин.",
-			"zh-cn": "此适配器允许您连接到Tractive GPS服务并检索您的宠物的位置。"
-		},
-		"authors": [
-            "xXBJXx <issi.dev.iobroker@gmail.com>",
-            "iobroker-community-adapters <mcm57@gmx.at>"
-        ],
-        "keywords": [
-            "tractive", 
-            "gps", 
-            "geoposition", 
-            "geolocation", 
-            "tracking", 
-            "dog", 
-            "cat", 
-            "pet"
-        ],
-		"license": "MIT",
-		"platform": "Javascript/Node.js",
-		"main": "build/main.js",
-		"icon": "tractive-gps.png",
-		"enabled": true,
-		"extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.tractive-gps/main/admin/tractive-gps.png",
-		"readme": "https://github.com/iobroker-community-adapters/ioBroker.tractive-gps/blob/main/README.md",
-		"loglevel": "info",
-		"mode": "daemon",
-		"type": "geoposition",
-		"compact": true,
-		"connectionType": "cloud",
-		"dataSource": "poll",
-		"materializeTab": true,
-		"messagebox": true,
-		"singleton": true,
-		"stopBeforeUpdate": true,
-		"adminUI": {
-			"config": "materialize",
-			"tab": "materialize"
-		},
-		"adminTab": {
-			"singleton": true,
-			"name": {
-				"en": "Tractive GPS",
-				"de": "Tractive GPS",
-				"ru": "Tractive GPS",
-				"pt": "Tractive GPS",
-				"nl": "Tractive GPS",
-				"fr": "Tractive GPS",
-				"it": "Tractive GPS",
-				"es": "Tractive GPS",
-				"pl": "Tractive GPS",
-				"uk": "Tractive GPS",
-				"zh-cn": "Tractive GPS"
-			},
-			"link": "",
-			"fa-icon": "info"
-		},
-		"eraseOnUpload": true,
-		"dependencies": [
-			{
-				"js-controller": ">=3.3.22"
-			}
-		],
-		"globalDependencies": [
-			{
-				"admin": ">=5.0.0"
-			}
-		]
-	},
-	"plugins": {
-		"sentry": {
-			"dsn": "https://a3cc76cdce9f4e74b52390d60fd75278@o384969.ingest.sentry.io/4504555481530368"
-		}
-	},
-	"protectedNative": [],
-	"native": {
-		"interval": 60,
-		"email": "",
-		"password": "",
-		"access_token": "",
-		"expires_at": 0,
-		"user_id": "",
-		"nameArray": []
-	},
-	"objects": [],
-	"instanceObjects": [
-		{
-			"_id": "info",
-			"type": "channel",
-			"common": {
-				"name": "Information"
-			},
-			"native": {}
-		},
-		{
-			"_id": "info.connection",
-			"type": "state",
-			"common": {
-				"role": "indicator.connected",
-				"name": "Device or service connected",
-				"type": "boolean",
-				"read": true,
-				"write": false,
-				"def": false
-			},
-			"native": {}
-		}
-	]
+  "common": {
+    "name": "tractive-gps",
+    "version": "1.0.0-alpha.0",
+    "news": {
+      "1.0.0-alpha.0": {
+        "en": "Adapter has been moved into iobroker-community-adapters organisation\nDependencies have been updated",
+        "de": "Adapter wurde in iobroker-community-Adapter Organisation verschoben\nAbhängigkeiten wurden aktualisiert",
+        "ru": "Адаптер переехал в организацию iobroker-community-adapters\nВ зависимости были обновлены",
+        "pt": "Adapter foi transferido para a organização iobroker-community-adapters\nAs dependências foram atualizadas",
+        "nl": "Adapter is verplaatst naar iobroker-community-papters organisatie\nAfhankelijkheid",
+        "fr": "L'adaptateur a été déplacé dans l'organisation iobroker-community-adapters\nLes dépendances ont été mises à jour",
+        "it": "L'adattatore è stato spostato nell'organizzazione degli adattatori della comunità-iobroker\nLe dipendenze sono state aggiornate",
+        "es": "Adaptador ha sido trasladado a la organización de ibroker-community-adapters\nSe han actualizado las dependencias",
+        "pl": "Adapter został przeniesiony do iobrokerskiej organizacji\nZależności zostały zaktualizowane",
+        "uk": "Переміщено перехід на iobroker-community-adapters\nОновлено залежність",
+        "zh-cn": "现已进入加勒比采掘器组织\n已更新了属地"
+      },
+      "0.1.2": {
+        "en": "Dependencies updated\nUI updated",
+        "de": "Abhängigkeiten aktualisiert\nUI aktualisiert",
+        "ru": "Обновлены зависимости\nОбновлен пользовательский интерфейс",
+        "pt": "Dependências actualizadas\nUI actualizado",
+        "nl": "Afhankelijkheden bijgewerkt\nUI bijgewerkt",
+        "fr": "Dépendances mises à jour\nMise à jour de l'interface utilisateur",
+        "it": "Dipendenze aggiornate\nInterfaccia utente aggiornata",
+        "es": "Dependencias actualizadas\nInterfaz de usuario actualizada",
+        "pl": "Zależności zaktualizowane\nUaktualniony interfejs użytkownika",
+        "uk": "Оновлені залежності\nОновлений інтерфейс користувача",
+        "zh-cn": "更新了依赖性\n更新了用户界面"
+      },
+      "0.1.1": {
+        "en": "Dependencies updated",
+        "de": "Abhängigkeiten aktualisiert",
+        "ru": "Обновление зависимостей",
+        "pt": "Dependências atualizadas",
+        "nl": "Afhankelijkheden bijgewerkt",
+        "fr": "Dépendances mises à jour",
+        "it": "Dipendenze aggiornate",
+        "es": "Dependencias actualizadas",
+        "pl": "Zależności zaktualizowane",
+        "uk": "Залежності оновлено",
+        "zh-cn": "依赖项已更新"
+      },
+      "0.1.0": {
+        "en": "first release",
+        "de": "erste veröffentlichung",
+        "ru": "первый релиз",
+        "pt": "primeiro lançamento",
+        "nl": "eerste vrijlating",
+        "fr": "première version",
+        "it": "primo rilascio",
+        "es": "primera liberación",
+        "pl": "pierwsze wydanie",
+        "uk": "перший реліз",
+        "zh-cn": "首次释放"
+      }
+    },
+    "title": "Tractive GPS",
+    "titleLang": {
+      "en": "Tractive GPS",
+      "de": "Tractive GPS",
+      "ru": "Tractive GPS",
+      "pt": "Tractive GPS",
+      "nl": "Tractive GPS",
+      "fr": "Tractive GPS",
+      "it": "Tractive GPS",
+      "es": "Tractive GPS",
+      "pl": "Tractive GPS",
+      "uk": "Tractive GPS",
+      "zh-cn": "Tractive GPS"
+    },
+    "desc": {
+      "en": "This adapter allows you to connect to the Tractive GPS service and retrieve the location of your pets.",
+      "de": "Mit diesem Adapter können Sie eine Verbindung zum Tractive-GPS-Dienst herstellen und den Standort Ihrer Haustiere abrufen.",
+      "ru": "Этот адаптер позволяет подключиться к службе Tractive GPS и получить данные о местонахождении ваших питомцев.",
+      "pt": "Este adaptador permite-lhe ligar-se ao serviço Tractive GPS e recuperar a localização dos seus animais de estimação.",
+      "nl": "Met deze adapter kunt u verbinding maken met de Tractive GPS service en de locatie van uw huisdieren opvragen.",
+      "fr": "Cet adaptateur vous permet de vous connecter au service GPS Tractive et de récupérer la localisation de vos animaux domestiques.",
+      "it": "Questo adattatore consente di connettersi al servizio Tractive GPS e recuperare la posizione dei tuoi animali domestici.",
+      "es": "Este adaptador le permite conectarse al servicio Tractive GPS y recuperar la ubicación de sus mascotas.",
+      "pl": "Ten adapter pozwala połączyć się z usługą Tractive GPS i otrzymać lokalizację swoich zwierząt.",
+      "uk": "Цей адаптер дозволяє підключитися до служби Tractive GPS і отримати місцезнаходження ваших тварин.",
+      "zh-cn": "此适配器允许您连接到Tractive GPS服务并检索您的宠物的位置。"
+    },
+    "authors": [
+      "xXBJXx <issi.dev.iobroker@gmail.com>",
+      "iobroker-community-adapters <mcm57@gmx.at>"
+    ],
+    "keywords": [
+      "tractive",
+      "gps",
+      "geoposition",
+      "geolocation",
+      "tracking",
+      "dog",
+      "cat",
+      "pet"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "build/main.js",
+    "icon": "tractive-gps.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.tractive-gps/main/admin/tractive-gps.png",
+    "readme": "https://github.com/iobroker-community-adapters/ioBroker.tractive-gps/blob/main/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "geoposition",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "materializeTab": true,
+    "messagebox": true,
+    "singleton": true,
+    "stopBeforeUpdate": true,
+    "adminUI": {
+      "config": "materialize",
+      "tab": "materialize"
+    },
+    "adminTab": {
+      "singleton": true,
+      "name": {
+        "en": "Tractive GPS",
+        "de": "Tractive GPS",
+        "ru": "Tractive GPS",
+        "pt": "Tractive GPS",
+        "nl": "Tractive GPS",
+        "fr": "Tractive GPS",
+        "it": "Tractive GPS",
+        "es": "Tractive GPS",
+        "pl": "Tractive GPS",
+        "uk": "Tractive GPS",
+        "zh-cn": "Tractive GPS"
+      },
+      "link": "",
+      "fa-icon": "info"
+    },
+    "eraseOnUpload": true,
+    "dependencies": [
+      {
+        "js-controller": ">=3.3.22"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=5.0.0"
+      }
+    ]
+  },
+  "plugins": {
+    "sentry": {
+      "dsn": "https://a3cc76cdce9f4e74b52390d60fd75278@o384969.ingest.sentry.io/4504555481530368"
+    }
+  },
+  "protectedNative": [],
+  "native": {
+    "interval": 60,
+    "email": "",
+    "password": "",
+    "access_token": "",
+    "expires_at": 0,
+    "user_id": "",
+    "nameArray": []
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
 }

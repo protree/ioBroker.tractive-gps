@@ -53,7 +53,7 @@ class TractiveGPS extends utils.Adapter {
   async onReady() {
     this.writeLog(`[Adapter v.${this.version} onReady] Starting adapter`, "debug");
     this.interval = this.config.interval * 1e3 + Math.floor(Math.random() * 100);
-    this.setState("info.connection", false, true);
+    await this.setStateAsync("info.connection", false, true);
     const obj = await this.getForeignObjectAsync("system.config");
     if (obj && obj.native && obj.native.secret) {
       this.secret = obj.native.secret;
@@ -78,7 +78,7 @@ class TractiveGPS extends utils.Adapter {
         if (this.config.expires_at < now) {
           this.writeLog(`[Adapter v.${this.version} onReady] access_token expired`, "debug");
           await this.getAccessToken();
-          this.setState("info.connection", true, true);
+          await this.setStateAsync("info.connection", true, true);
         } else {
           this.writeLog(`[Adapter v.${this.version} onReady] access_token valid`, "debug");
           this.allData.userInfo.user_id = this.config.user_id;
@@ -86,7 +86,7 @@ class TractiveGPS extends utils.Adapter {
           await this.createCronjob();
           this.writeLog(`[Adapter v.${this.version} onReady] start requestData`, "debug");
           await this.requestData();
-          this.setState("info.connection", true, true);
+          await this.setStateAsync("info.connection", true, true);
         }
       } else {
         this.writeLog(
@@ -94,7 +94,7 @@ class TractiveGPS extends utils.Adapter {
           "debug"
         );
         await this.getAccessToken();
-        this.setState("info.connection", true, true);
+        await this.setStateAsync("info.connection", true, true);
       }
     } else {
       this.writeLog(`[Adapter v.${this.version} onReady] email and password are required`, "error");
@@ -691,7 +691,7 @@ class TractiveGPS extends utils.Adapter {
       this.writeLog(`[Adapter v.${this.version} onUnload] Adapter stopped`, "debug");
       if (this.requestTimer)
         this.clearTimeout(this.requestTimer);
-      this.setState("info.connection", false, true);
+      await this.setStateAsync("info.connection", false, true);
       callback();
     } catch (e) {
       callback();
