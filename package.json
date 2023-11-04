@@ -6,7 +6,17 @@
     "name": "xXBJXx",
     "email": "issi.dev.iobroker@gmail.com"
   },
-  "homepage": "https://github.com/xXBJXx/ioBroker.tractive-gps",
+  "contributors": [
+    {
+        "name": "xXBJXx",
+        "email": "issi.dev.iobroker@gmail.com"
+    },
+    { 
+        "name": "iobroker-community-adapters",
+        "email": "mcm57@gmx.at"
+    }
+  ],
+  "homepage": "https://github.com/iobroker-community-adapters/ioBroker.tractive-gps",
   "license": "MIT",
   "keywords": [
     "tractive",
@@ -20,7 +30,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/xXBJXx/ioBroker.tractive-gps.git"
+    "url": "https://github.com/iobroker-community-adapters/ioBroker.tractive-gps.git"
   },
   "engines": {
     "node": ">= 16"
@@ -111,7 +121,7 @@
     "release": "release-script"
   },
   "bugs": {
-    "url": "https://github.com/xXBJXx/ioBroker.tractive-gps/issues"
+    "url": "https://github.com/iobroker-community-adapters/ioBroker.tractive-gps/issues"
   },
   "readmeFilename": "README.md"
 }

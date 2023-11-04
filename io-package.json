@@ -70,15 +70,27 @@
 			"uk": "Цей адаптер дозволяє підключитися до служби Tractive GPS і отримати місцезнаходження ваших тварин.",
 			"zh-cn": "此适配器允许您连接到Tractive GPS服务并检索您的宠物的位置。"
 		},
-		"authors": ["xXBJXx <issi.dev.iobroker@gmail.com>"],
-		"keywords": ["tractive", "gps", "geoposition", "geolocation", "tracking", "dog", "cat", "pet"],
+		"authors": [
+            "xXBJXx <issi.dev.iobroker@gmail.com>",
+            "iobroker-community-adapters <mcm57@gmx.at>"
+        ],
+        "keywords": [
+            "tractive", 
+            "gps", 
+            "geoposition", 
+            "geolocation", 
+            "tracking", 
+            "dog", 
+            "cat", 
+            "pet"
+        ],
 		"license": "MIT",
 		"platform": "Javascript/Node.js",
 		"main": "build/main.js",
 		"icon": "tractive-gps.png",
 		"enabled": true,
-		"extIcon": "https://raw.githubusercontent.com/xXBJXx/ioBroker.tractive-gps/main/admin/tractive-gps.png",
-		"readme": "https://github.com/xXBJXx/ioBroker.tractive-gps/blob/main/README.md",
+		"extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.tractive-gps/main/admin/tractive-gps.png",
+		"readme": "https://github.com/iobroker-community-adapters/ioBroker.tractive-gps/blob/main/README.md",
 		"loglevel": "info",
 		"mode": "daemon",
 		"type": "geoposition",
