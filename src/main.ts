@@ -615,7 +615,8 @@ class TractiveGPS extends utils.Adapter {
 				const response = await axios(url, options);
 				if (response.status === 200) {
 					this.writeLog(
-						`[Adapter v.${this.version} Axios V: ${axios.VERSION
+						`[Adapter v.${this.version} Axios V: ${
+							axios.VERSION
 						}  getTrackerInfo] response: ${JSON.stringify(response.data)}`,
 						'debug',
 					);
@@ -623,7 +624,8 @@ class TractiveGPS extends utils.Adapter {
 						this.allData.tracker.push(response.data);
 						// this.tracker.push(response.data);
 						this.writeLog(
-							`[Adapter v.${this.version} Axios V: ${axios.VERSION
+							`[Adapter v.${this.version} Axios V: ${
+								axios.VERSION
 							}  getTrackerInfo] tracker: ${JSON.stringify(this.allData.tracker)}`,
 							'debug',
 						);
@@ -666,14 +668,16 @@ class TractiveGPS extends utils.Adapter {
 				const response = await axios(url, options);
 				if (response.status === 200) {
 					this.writeLog(
-						`[Adapter v.${this.version} Axios V: ${axios.VERSION
+						`[Adapter v.${this.version} Axios V: ${
+							axios.VERSION
 						}  getTrackerDeviceHwReport] response: ${JSON.stringify(response.data)}`,
 						'debug',
 					);
 					if (response.data) {
 						this.allData.device_hw_report.push(response.data);
 						this.writeLog(
-							`[Adapter v.${this.version} Axios V: ${axios.VERSION
+							`[Adapter v.${this.version} Axios V: ${
+								axios.VERSION
 							}  getTrackerDeviceHwReport] trackerDeviceHwReport: ${JSON.stringify(
 								this.allData.device_hw_report,
 							)}`,
@@ -690,7 +694,8 @@ class TractiveGPS extends utils.Adapter {
 			} catch (error) {
 				if (error.response && error.response.data.code === 4002) {
 					this.writeLog(
-						`[Adapter v.${this.version} Axios V: ${axios.VERSION
+						`[Adapter v.${this.version} Axios V: ${
+							axios.VERSION
 						}  getTrackerDeviceHwReport] warn: ${JSON.stringify(
 							error.response.data.message,
 						)} - the tracker does not yet contain any data`,
@@ -728,14 +733,16 @@ class TractiveGPS extends utils.Adapter {
 				const response = await axios(url, options);
 				if (response.status === 200) {
 					this.writeLog(
-						`[Adapter v.${this.version} Axios V: ${axios.VERSION
+						`[Adapter v.${this.version} Axios V: ${
+							axios.VERSION
 						}  getTrackerLocation] response: ${JSON.stringify(response.data)}`,
 						'debug',
 					);
 					if (response.data) {
 						this.allData.device_pos_report.push(response.data);
 						this.writeLog(
-							`[Adapter v.${this.version} Axios V: ${axios.VERSION
+							`[Adapter v.${this.version} Axios V: ${
+								axios.VERSION
 							}  getTrackerLocation] trackerLocation: ${JSON.stringify(this.allData.device_pos_report)}`,
 							'debug',
 						);
@@ -750,7 +757,8 @@ class TractiveGPS extends utils.Adapter {
 			} catch (error) {
 				if (error.response && error.response.data.code === 4002) {
 					this.writeLog(
-						`[Adapter v.${this.version} Axios V: ${axios.VERSION
+						`[Adapter v.${this.version} Axios V: ${
+							axios.VERSION
 						}  getTrackerLocation] warn: ${JSON.stringify(
 							error.response.data.message,
 						)} - the tracker does not yet contain any data`,
@@ -791,7 +799,8 @@ class TractiveGPS extends utils.Adapter {
 				const response = await axios(url, options);
 				if (response.status === 200) {
 					this.writeLog(
-						`[Adapter v.${this.version} Axios V: ${axios.VERSION
+						`[Adapter v.${this.version} Axios V: ${
+							axios.VERSION
 						}  getTrackerPosition] response: ${JSON.stringify(response.data)}`,
 						'debug',
 					);
@@ -802,7 +811,8 @@ class TractiveGPS extends utils.Adapter {
 						} = {};
 						testdata[tracker._id] = response.data;
 						this.writeLog(
-							`[Adapter v.${this.version} Axios V: ${axios.VERSION
+							`[Adapter v.${this.version} Axios V: ${
+								axios.VERSION
 							}  getTrackerPosition] trackerPosition: ${JSON.stringify(this.allData.positions)}`,
 							'debug',
 						);
@@ -893,7 +903,8 @@ class TractiveGPS extends utils.Adapter {
 						this.allData.userInfo.user_id = response.data.user_id;
 						this.allData.userInfo.expires_at = response.data.expires_at;
 						this.writeLog(
-							`[Adapter v.${this.version} Axios V: ${axios.VERSION
+							`[Adapter v.${this.version} Axios V: ${
+								axios.VERSION
 							}  getAccessToken] obj: ${JSON.stringify(obj)}`,
 							'debug',
 						);
