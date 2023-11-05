@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "tractive-gps",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "news": {
+      "1.1.0": {
+        "en": "Bugfix: objects will be created only if necessary\nBugfix for excessive number of warnings has been added\nDistance calculation between ioBroker and tracker has been added",
+        "de": "Bugfix: Objekte werden nur bei Bedarf erstellt\nBugfix für übermäßige Anzahl von Warnungen wurde hinzugefügt\nEntfernungsberechnung zwischen ioBroker und Tracker wurde hinzugefügt",
+        "ru": "Bugfix: объекты будут созданы только при необходимости\nДобавлен Bugfix для чрезмерного количества предупреждений\nДобавлен расчёт расстояния между ioBroker и tracker",
+        "pt": "Bugfix: os objetos serão criados somente se necessário\nBugfix para o número excessivo de avisos foi adicionado\nCálculo de distância entre ioBroker e rastreador foi adicionado",
+        "nl": "Voorwerpen worden alleen gecreëerd indien nodig\nBugfix voor overmatig aantal waarschuwingen is toegevoegd\nVertaling:",
+        "fr": "Bugfix: les objets ne seront créés que si nécessaire\nBugfix for excessive number of warnings has been added\nCalcul de distance entre ioBroker et tracker a été ajouté",
+        "it": "Bugfix: gli oggetti verranno creati solo se necessario\nBugfix per un numero eccessivo di avvisi è stato aggiunto\nCalcolo a distanza tra ioBroker e tracker è stato aggiunto",
+        "es": "Bugfix: los objetos se crearán sólo si es necesario\nBugfix para el número excesivo de advertencias se ha añadido\nSe ha añadido el cálculo de distancia entre ioBroker y tracker",
+        "pl": "Bugfix: Obiekty będą tworzone tylko wtedy, gdy konieczne będzie koniecznie\nBugfix dla nadmiernej liczby ostrzeżeń został dodany\nObliczenia pomiędzy ioBrokerem i trackerem zostały dodane",
+        "uk": "Виправлення: об'єкти будуть створені тільки при необхідності\nПомилки для надмірної кількості попереджень\nДодано розрахунок дистанції ioBroker та трекер",
+        "zh-cn": "Bugfix:只有在必要情况下才能建立物体\n此外,还增加了过多的警告的力度。\n添加了气布罗克和轨道之间的试验。"
+      },
       "1.0.0": {
         "en": "Adapter has been moved into iobroker-community-adapters organisation\nDependencies have been updated",
         "de": "Adapter wurde in iobroker-community-Adapter Organisation verschoben\nAbhängigkeiten wurden aktualisiert",

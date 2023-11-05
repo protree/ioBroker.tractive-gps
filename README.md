@@ -83,8 +83,7 @@ Or you can use the tab **files** to upload the file. (see image below)\
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 1.1.0 (2023-11-05)
 * (Scrounger) Bugfix: objects will be created only if necessary
 * (Scrounger) Bugfix for excessive number of warnings has been added
 * (Scrounger) Distance calculation between ioBroker and tracker has been added
