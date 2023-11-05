@@ -82,13 +82,12 @@ Or you can use the tab **files** to upload the file. (see image below)\
 <!--
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
-
 -->
 
 ### **WORK IN PROGRESS**
-* (Scrounger) bug fix: create objects only if necessary
-* (Scrounger) bug fix for #4
-* (Scrounger) Calculate distance between ioBroker and tracker
+* (Scrounger) Bugfix: objects will be created only if necessary
+* (Scrounger) Bugfix for excessive number of warnings has been added
+* (Scrounger) Distance calculation between ioBroker and tracker has been added
 
 ### 1.0.0 (2023-11-04)
 * (mcm1957) Adapter has been moved into iobroker-community-adapters organisation
