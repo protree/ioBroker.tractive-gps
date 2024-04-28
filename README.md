@@ -83,7 +83,7 @@ Or you can use the tab **files** to upload the file. (see image below)\
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 1.2.0 (2024-04-28)
 * (mcm1957) Adapter requires node.js >= 18 and js-controller >= 5 now
 * (mcm1957) Dependencies have been updated
 
@@ -102,9 +102,6 @@ Or you can use the tab **files** to upload the file. (see image below)\
 
 ### 0.1.1 (2023-02-05)
 * (xXBJXx) Dependencies updated
-
-### 0.1.0 (2023-02-05)
-* (xXBJXx) first release
 
 ## License
 MIT License

@@ -14,6 +14,10 @@ var __copyProps = (to, from, except, desc) => {
   return to;
 };
 var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
@@ -51,6 +55,9 @@ class TractiveGPS extends utils.Adapter {
     };
     this.secret = "";
   }
+  /**
+   * Is called when databases are connected and adapter received configuration.
+   */
   async onReady() {
     this.writeLog(`[Adapter v.${this.version} onReady] Starting adapter`, "debug");
     this.interval = this.config.interval * 1e3 + Math.floor(Math.random() * 100);
@@ -101,6 +108,7 @@ class TractiveGPS extends utils.Adapter {
       this.writeLog(`[Adapter v.${this.version} onReady] email and password are required`, "error");
     }
   }
+  // create a cronjob to get new access_token wenn expires_at is reached
   async createCronjob() {
     this.writeLog(`[Adapter v.${this.version} createCronjob] create cronjob`, "debug");
     const expires_at = this.config.expires_at;
@@ -133,6 +141,7 @@ class TractiveGPS extends utils.Adapter {
       this.requestData();
     }, this.interval);
   }
+  // write all data in the state
   async writeAllData() {
     for (const device of this.allData.trackers) {
       for (const [key, value] of Object.entries(device)) {
@@ -221,6 +230,9 @@ class TractiveGPS extends utils.Adapter {
     }
     await this.setStateAsync("json", JSON.stringify(this.allData), true);
   }
+  /**
+   * create the all states for the adapter
+   */
   async createStates() {
     for (const device of this.allData.trackers) {
       if (this.config.nameArray.length > 0) {
@@ -423,6 +435,9 @@ class TractiveGPS extends utils.Adapter {
       native: {}
     });
   }
+  /**
+   * @description a function for log output
+   */
   writeLog(logText, logType) {
     if (logType === "silly")
       this.log.silly(logText);
@@ -435,6 +450,9 @@ class TractiveGPS extends utils.Adapter {
     if (logType === "error")
       this.log.error(logText);
   }
+  /**
+   * Is called if a subscribed state changes
+   */
   async onStateChange(id, state) {
     if (state) {
       if (state.from === "system.adapter." + this.namespace) {
@@ -449,6 +467,10 @@ class TractiveGPS extends utils.Adapter {
       return;
     }
   }
+  /**
+   * call all trackers from the user
+   * https://graph.tractive.com/3/user/${this.user_id}/trackers
+   */
   async getTrackers() {
     const url = `https://graph.tractive.com/3/user/${this.allData.userInfo.user_id}/trackers`;
     const options = {
@@ -507,6 +529,10 @@ class TractiveGPS extends utils.Adapter {
       );
     }
   }
+  /**
+   * call all tracker information
+   * https://graph.tractive.com/3/tracker/${tracker._id}
+   */
   async getTrackerInfo() {
     this.allData.tracker = [];
     for (const tracker of this.allData.trackers) {
@@ -548,6 +574,10 @@ class TractiveGPS extends utils.Adapter {
       }
     }
   }
+  /**
+   * call all tracker device_hw_report
+   * https://graph.tractive.com/3/device_hw_report/${tracker._id}
+   */
   async getTrackerDeviceHwReport() {
     this.allData.device_hw_report = [];
     for (const tracker of this.allData.trackers) {
@@ -600,6 +630,10 @@ class TractiveGPS extends utils.Adapter {
       }
     }
   }
+  /**
+   * call all tracker location
+   * https://graph.tractive.com/3/device_pos_report/${tracker._id}
+   */
   async getTrackerLocation() {
     this.allData.device_pos_report = [];
     for (const tracker of this.allData.trackers) {
@@ -650,6 +684,13 @@ class TractiveGPS extends utils.Adapter {
       }
     }
   }
+  /**
+   * call all tracker position
+   * https://graph.tractive.com/3/tracker/CDSOLIJE/positions?time_from=${time_from}&time_to=${time_to}&format=json_segments
+   * time_from = 1.1.2023 00:00:00 in seconds
+   * time_to = 1.1.2023 23:59:59 in seconds
+   * format = json_segments
+   */
   async getTrackerPosition(time_from, time_to) {
     this.allData.positions = [];
     for (const tracker of this.allData.trackers) {
@@ -693,6 +734,11 @@ class TractiveGPS extends utils.Adapter {
       }
     }
   }
+  /**
+   * If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
+   * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
+   * Using this method requires "common.messagebox" property to be set to true in io-package.json
+   */
   async onMessage(obj) {
     if (typeof obj === "object" && obj.message) {
       if (obj.command === "refreshToken") {
@@ -703,6 +749,9 @@ class TractiveGPS extends utils.Adapter {
       }
     }
   }
+  /**
+   * Is called when adapter shuts down - callback has to be called under any circumstances!
+   */
   async onUnload(callback) {
     try {
       this.writeLog(`[Adapter v.${this.version} onUnload] Adapter stopped`, "debug");
