@@ -82,7 +82,6 @@
         "zh-cn": "首次释放"
       }
     },
-    "title": "Tractive GPS",
     "titleLang": {
       "en": "Tractive GPS",
       "de": "Tractive GPS",
@@ -123,7 +122,10 @@
       "cat",
       "pet"
     ],
-    "license": "MIT",
+    "licenseInformation": {
+      "license": "MIT",
+      "type": "free"
+    },
     "platform": "Javascript/Node.js",
     "main": "build/main.js",
     "icon": "tractive-gps.png",
@@ -131,6 +133,7 @@
     "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.tractive-gps/main/admin/tractive-gps.png",
     "readme": "https://github.com/iobroker-community-adapters/ioBroker.tractive-gps/blob/main/README.md",
     "loglevel": "info",
+    "tier": 2,
     "mode": "daemon",
     "type": "geoposition",
     "compact": true,
@@ -165,12 +168,12 @@
     "eraseOnUpload": true,
     "dependencies": [
       {
-        "js-controller": ">=3.3.22"
+        "js-controller": ">=5.0.19"
       }
     ],
     "globalDependencies": [
       {
-        "admin": ">=5.0.0"
+        "admin": ">=6.13.16"
       }
     ]
   },
