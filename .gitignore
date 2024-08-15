@@ -18,3 +18,4 @@ admin/i18n/*/flat.txt
 
 admin/src/.DS_Store
 
+/src-admin/package-lock.json

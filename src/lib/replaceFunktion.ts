@@ -1,5 +1,5 @@
 /**
- * @description replace all ä,ö,ü,ß and all other special characters
+ * @description replace all ä, ö, ü, ß and all other special characters
  */
 export async function replaceFunktion(text: string): Promise<string> {
 	let text2 = text.toLowerCase();

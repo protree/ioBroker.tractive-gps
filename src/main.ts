@@ -7,7 +7,7 @@ import axios from 'axios';
 import { CronJob } from 'cron';
 import { GeoPosition } from 'geo-position.ts';
 import sourceMapSupport from 'source-map-support';
-import { decrypt, encrypt } from './lib/Helper';
+
 import { stateAttrb } from './lib/object_definition';
 import { TractiveDevice } from './types/TractiveDevice';
 
@@ -21,7 +21,6 @@ class TractiveGPS extends utils.Adapter {
 	// private expires_at: number;
 
 	private readonly allData: TractiveDevice;
-	private secret: string;
 
 	public constructor(options: Partial<utils.AdapterOptions> = {}) {
 		super({
@@ -46,7 +45,6 @@ class TractiveGPS extends utils.Adapter {
 			positions: [],
 			device_pos_report: [],
 		};
-		this.secret = '';
 	}
 
 	/**
@@ -59,29 +57,9 @@ class TractiveGPS extends utils.Adapter {
 		this.interval = this.config.interval * 1000 + Math.floor(Math.random() * 100);
 		// Reset the connection indicator during startup
 		await this.setStateAsync('info.connection', false, true);
-		const obj = await this.getForeignObjectAsync('system.config');
-		if (obj && obj.native && obj.native.secret) {
-			this.secret = obj.native.secret;
-			console.log('system.config.native.secret found!');
-			this.writeLog(`system.config.native.secret found!`, 'debug');
-		} else {
-			// adapter.config.pwd = decrypt('Zgfr56gFe87jJOM', adapter.config.pwd);
-			console.log('Could not find system.config.native.secret!');
-			this.writeLog(`Could not find system.config.native.secret!`, 'error');
-		}
-		console.log('this.secret: ' + this.secret);
 		// check if the access data are available
 		if (this.config.email && this.config.password) {
-			if (this.config.access_token.startsWith(`$/aes-192-cbc:`)) {
-				this.writeLog(`Decrypting access_token`, 'debug');
-				await this.extendForeignObjectAsync(`system.adapter.${this.namespace}`, {
-					native: {
-						access_token: encrypt(this.secret, this.decrypt(this.config.access_token)),
-					},
-				});
-			}
-
-			// check if user_id and expires_at is greater than 0 and access_token is present
+			// check if user_id and expires_at is greater than 0, and access_token is present
 			if (this.config.user_id && this.config.expires_at > 0 && this.config.access_token) {
 				// check if expires_at is smaller than now
 				// convert Date.now() to seconds
@@ -833,18 +811,24 @@ class TractiveGPS extends utils.Adapter {
 		}
 	}
 
-	/**
-	 * If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
-	 * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
-	 * Using this method requires "common.messagebox" property to be set to true in io-package.json
-	 */
 	private async onMessage(obj: ioBroker.Message): Promise<void> {
-		if (typeof obj === 'object' && obj.message) {
+		if (typeof obj === 'object' && obj?.message) {
 			if (obj.command === 'refreshToken') {
 				this.writeLog(`[Adapter v.${this.version} onMessage] refresh the Token`, 'debug');
-				await this.getAccessToken();
+				const native = await this.getAccessToken(obj.message.email, obj.message.password);
 				// Send response in callback if required
-				if (obj.callback) this.sendTo(obj.from, obj.command, 'Successful', obj.callback);
+				if (obj.callback) {
+					if (!native || native.error) {
+						this.sendTo(
+							obj.from,
+							obj.command,
+							{ error: native?.error || 'Cannot get token' },
+							obj.callback,
+						);
+					} else {
+						this.sendTo(obj.from, obj.command, { native }, obj.callback);
+					}
+				}
 			}
 		}
 	}
@@ -860,16 +844,25 @@ class TractiveGPS extends utils.Adapter {
 			await this.setStateAsync('info.connection', false, true);
 
 			callback();
-		} catch (e) {
+		} catch {
 			callback();
 		}
 	}
 
-	private async getAccessToken(): Promise<void> {
+	private async getAccessToken(
+		email?: string,
+		password?: string,
+	): Promise<{
+		access_token?: string;
+		user_id?: string;
+		expires_at?: string;
+		error?: string;
+	} | null> {
 		console.log('getAccessToken');
 		// get the access token
 		const url = 'https://graph.tractive.com/3/auth/token';
 		console.log('url', url);
+
 		const options = {
 			method: 'POST',
 			headers: {
@@ -877,12 +870,14 @@ class TractiveGPS extends utils.Adapter {
 				'x-tractive-client': this.client_id,
 			},
 			data: {
-				platform_email: this.config.email,
-				platform_token: decrypt(this.secret, this.config.password),
+				platform_email: email || this.config.email,
+				platform_token: password || this.config.password,
 				grant_type: 'tractive',
 			},
 		};
+
 		console.log('options', options);
+
 		try {
 			const response = await axios(url, options);
 			console.log('response', response);
@@ -894,31 +889,47 @@ class TractiveGPS extends utils.Adapter {
 					'debug',
 				);
 				if (response.data) {
-					const obj = await this.getForeignObjectAsync(`system.adapter.${this.namespace}`);
-					if (obj) {
-						// write the data into the config
-						obj.native.access_token = encrypt(this.secret, response.data.access_token);
-						obj.native.user_id = response.data.user_id;
-						obj.native.expires_at = response.data.expires_at;
-						this.allData.userInfo.user_id = response.data.user_id;
-						this.allData.userInfo.expires_at = response.data.expires_at;
-						this.writeLog(
-							`[Adapter v.${this.version} Axios V: ${
-								axios.VERSION
-							}  getAccessToken] obj: ${JSON.stringify(obj)}`,
-							'debug',
-						);
-						await this.setForeignObjectAsync(`system.adapter.${this.namespace}`, obj);
-						this.writeLog(
-							`[Adapter v.${this.version} getAccessToken] new access_token: ${response.data.access_token}`,
-							'debug',
-						);
+					if (!password && !email) {
+						// save new token
+						const obj = await this.getForeignObjectAsync(`system.adapter.${this.namespace}`);
+						if (obj) {
+							// write the data into the config
+							obj.native.access_token = response.data.access_token;
+							obj.native.user_id = response.data.user_id;
+							obj.native.expires_at = response.data.expires_at;
+
+							this.allData.userInfo.user_id = response.data.user_id;
+							this.allData.userInfo.expires_at = response.data.expires_at;
+
+							this.writeLog(
+								`[Adapter v.${this.version} Axios V: ${
+									axios.VERSION
+								}  getAccessToken] obj: ${JSON.stringify(obj)}`,
+								'debug',
+							);
+
+							await this.setForeignObjectAsync(`system.adapter.${this.namespace}`, obj);
+
+							this.writeLog(
+								`[Adapter v.${this.version} getAccessToken] new access_token: ${response.data.access_token}`,
+								'debug',
+							);
+						}
+					} else {
+						return {
+							access_token: response.data.access_token,
+							user_id: response.data.user_id,
+							expires_at: response.data.expires_at,
+						};
 					}
 				} else {
 					this.writeLog(
 						`[Adapter v.${this.version} Axios V: ${axios.VERSION} getAccessToken] no data`,
 						'warn',
 					);
+					return {
+						error: 'no data',
+					};
 				}
 			} else {
 				if (response.data) {
@@ -926,11 +937,17 @@ class TractiveGPS extends utils.Adapter {
 						`[Adapter v.${this.version} Axios V: ${axios.VERSION} getAccessToken] ${response.status} ${response.statusText} ${response.data}`,
 						'warn',
 					);
+					return {
+						error: response.data.toString(),
+					};
 				} else {
 					this.writeLog(
 						`[Adapter v.${this.version} Axios V: ${axios.VERSION} getAccessToken] ${response.status} ${response.statusText}`,
 						'warn',
 					);
+					return {
+						error: response.statusText.toString(),
+					};
 				}
 			}
 		} catch (error) {
@@ -938,7 +955,12 @@ class TractiveGPS extends utils.Adapter {
 				`[Adapter v.${this.version} Axios V: ${axios.VERSION} getAccessToken] error: ${error}`,
 				'error',
 			);
+			return {
+				error: error.toString(),
+			};
 		}
+
+		return null;
 	}
 }
 

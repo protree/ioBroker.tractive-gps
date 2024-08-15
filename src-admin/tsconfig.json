@@ -1,0 +1,15 @@
+// Specialized tsconfig for the admin directory,
+// includes DOM typings and configures the admin build
+{
+  "extends": "../src/tsconfig.json",
+  "compilerOptions": {
+	"noEmit": false,
+	"outDir": "./build",
+	"sourceMap": true,
+	"sourceRoot": "./src",
+	"noImplicitAny": false,
+	"lib": ["es2018", "DOM"],
+	"jsx": "react"
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
+}
