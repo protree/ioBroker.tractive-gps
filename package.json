@@ -98,7 +98,7 @@
     "test:package": "mocha test/package --exit",
     "test:integration": "mocha test/integration --exit",
     "test": "npm run test:ts && npm run test:package",
-    "check": "tsc --noEmit -p src/tsconfig.json && tsc --noEmit -p src-admin/tsconfig.json",
+    "check": "tsc --noEmit -p src/tsconfig.json && cd src-admin && npm i -f && cd .. && tsc --noEmit -p src-admin/tsconfig.json",
     "lint": "eslint --ext .ts,.tsx src/ src-admin/src/",
     "translate": "translate-adapter",
     "release": "release-script",
