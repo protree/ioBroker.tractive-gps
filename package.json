@@ -19,6 +19,7 @@
   "homepage": "https://github.com/iobroker-community-adapters/ioBroker.tractive-gps",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
     "tractive",
     "gps",
     "geoposition",
