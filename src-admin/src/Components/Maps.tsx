@@ -10,14 +10,19 @@ interface MapsProps {
 
 const Maps: React.FC<MapsProps> = ({ item }): React.JSX.Element | null => {
     const [LeafletComponents, setLeafletComponents] = React.useState<{
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         Circle: any;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         MapContainer: any;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         Marker: any;
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         TileLayer: any;
     } | null>(null);
 
     React.useEffect(() => {
         import('react-leaflet')
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             .then((module: any) => {
                 setLeafletComponents({
                     Circle: module.Circle,
