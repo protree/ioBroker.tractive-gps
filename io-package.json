@@ -151,7 +151,6 @@
     "compact": true,
     "connectionType": "cloud",
     "dataSource": "poll",
-    "materializeTab": true,
     "messagebox": true,
     "singleton": true,
     "stopBeforeUpdate": true,
