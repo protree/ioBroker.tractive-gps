@@ -140,7 +140,6 @@
       "type": "free"
     },
     "platform": "Javascript/Node.js",
-    "main": "build/main.js",
     "icon": "tractive-gps.png",
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.tractive-gps/main/admin/tractive-gps.png",
