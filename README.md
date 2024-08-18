@@ -83,7 +83,7 @@ Or you can use the tab **files** to upload the file. (see image below)
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.0.0 (2024-08-18)
 * (bluefox) BREAKING CHANGE: You must enter your credentials again
 * (bluefox) Old code has been removed and GUI has been rewritten
 * (bluefox) Dependencies have been updated
@@ -104,9 +104,6 @@ Or you can use the tab **files** to upload the file. (see image below)
 ### 0.1.2 (2023-02-24)
 * (xXBJXx) Dependencies updated
 * (xXBJXx) UI updated
-
-### 0.1.1 (2023-02-05)
-* (xXBJXx) Dependencies updated
 
 ## License
 MIT License

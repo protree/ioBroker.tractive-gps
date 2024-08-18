@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "tractive-gps",
-    "version": "1.2.0",
+    "version": "2.0.0",
     "news": {
+      "2.0.0": {
+        "en": "BREAKING CHANGE: You must enter your credentials again\nOld code has been removed and GUI has been rewritten\nDependencies have been updated",
+        "de": "BREAKING CHANGE: Sie müssen Ihre Anmeldeinformationen erneut eingeben\nDer alte Code wurde entfernt und GUI wurde neu geschrieben\nAbhängigkeiten wurden aktualisiert",
+        "ru": "Ж: Вы должны снова ввести свои полномочия\nСтарый код был удален, и GUI был переписан\nЗависимость обновлена",
+        "pt": "Muita coisa: Você deve inserir suas credenciais novamente\nCódigo antigo foi removido e GUI foi reescrito\nAs dependências foram atualizadas",
+        "nl": "Breaking VERANDERING: U moet uw referenties opnieuw invoeren\nOude code is verwijderd en GUI is herschreven\nAfhankelijkheden zijn bijgewerkt",
+        "fr": "CHANGEMENT DE BREAING: Vous devez à nouveau entrer vos lettres de créances\nL'ancien code a été supprimé et l'interface graphique a été réécrite\nLes dépendances ont été actualisées",
+        "it": "CAMBIO DI BREAKING: Devi inserire nuovamente le credenziali\nVecchio codice è stato rimosso e GUI è stato riscritto\nLe dipendenze sono state aggiornate",
+        "es": "Cambiando: Debe introducir sus credenciales de nuevo\nSe ha eliminado el código antiguo y GUI ha sido reescrito\nSe han actualizado las dependencias",
+        "pl": "ZMIANA ZBIORCZA: Musisz ponownie wpisać swoje referencje\nStary kod został usunięty i GUI został przepisany\nZaktualizowano zależności",
+        "uk": "БРЕАКІНГ ЗМІН: Ви повинні ввести ваші облікові дані знову\nСтарший код був вилучений і графічний інтерфейс\nЗалежність було оновлено",
+        "zh-cn": "打破变化: 您必须再次输入您的证书\n旧代码已被删除, 并重写 GUI\n依赖关系已更新"
+      },
       "1.2.0": {
         "en": "Adapter requires node.js >= 18 and js-controller >= 5 now\nDependencies have been updated",
         "de": "Adapter benötigt node.js >= 18 und js-controller >= 5 jetzt\nAbhängigkeiten wurden aktualisiert",
@@ -80,19 +93,6 @@
         "pl": "Zależności zaktualizowane",
         "uk": "Залежності оновлено",
         "zh-cn": "依赖项已更新"
-      },
-      "0.1.0": {
-        "en": "first release",
-        "de": "erste veröffentlichung",
-        "ru": "первый релиз",
-        "pt": "primeiro lançamento",
-        "nl": "eerste vrijlating",
-        "fr": "première version",
-        "it": "primo rilascio",
-        "es": "primera liberación",
-        "pl": "pierwsze wydanie",
-        "uk": "перший реліз",
-        "zh-cn": "首次释放"
       }
     },
     "titleLang": {
@@ -249,8 +249,14 @@
       "dsn": "https://a3cc76cdce9f4e74b52390d60fd75278@o384969.ingest.sentry.io/4504555481530368"
     }
   },
-  "protectedNative": ["access_token", "password"],
-  "encryptedNative": ["access_token", "password"],
+  "protectedNative": [
+    "access_token",
+    "password"
+  ],
+  "encryptedNative": [
+    "access_token",
+    "password"
+  ],
   "native": {
     "interval": 60,
     "email": "",
