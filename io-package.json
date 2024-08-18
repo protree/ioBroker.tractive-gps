@@ -194,7 +194,7 @@
     }
   },
   "protectedNative": ["access_token", "password"],
-  "encrypterNative": ["access_token", "password"],
+  "encryptedNative": ["access_token", "password"],
   "native": {
     "interval": 60,
     "email": "",
