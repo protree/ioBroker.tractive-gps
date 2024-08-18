@@ -186,6 +186,62 @@
       {
         "admin": ">=6.13.16"
       }
+    ],
+    "messages": [
+      {
+        "condition": {
+          "operand": "and",
+          "rules": [
+            "oldVersion<2.0.0",
+            "newVersion>=2.0.0"
+          ]
+        },
+        "title": {
+          "en": "Important notice!",
+          "de": "Wichtiger Hinweis!",
+          "ru": "Важное замечание!",
+          "pt": "Notícia importante!",
+          "nl": "Belangrijke mededeling!",
+          "fr": "Avis important!",
+          "it": "Avviso IMPORTANTE!",
+          "es": "Noticia importante!",
+          "pl": "Ważna uwaga!",
+          "zh-cn": "重要通知!",
+          "uk": "Важливе повідомлення!"
+        },
+        "text": {
+          "en": "Release 2.0.0 changes the encryption method for passwords. After migration user credentials must be entered again.",
+          "de": "Release 2.0.0 ändert die Verschlüsselungsmethode für Passwörter. Nach der Migration müssen Benutzerberechtigungen erneut eingegeben werden.",
+          "ru": "Выпуск 2.0.0 меняет метод шифрования для паролей. После миграции учетные данные пользователя должны быть введены снова.",
+          "pt": "O Release 2.0.0 muda o método de criptografia para senhas. Após a migração, as credenciais de usuário devem ser inseridas novamente.",
+          "nl": "Release 2.0.0 verandert de encryptiemethode voor wachtwoorden. Na migratie moeten gebruikersgegevens opnieuw worden ingevoerd.",
+          "fr": "La version 2.0.0 modifie la méthode de chiffrement des mots de passe. Après la migration, les identifiants d'utilisateur doivent être entrés à nouveau.",
+          "it": "Rilasciare 2.0.0 modifica il metodo di crittografia per le password. Dopo che le credenziali dell'utente di migrazione devono essere inserite di nuovo.",
+          "es": "La versión 2.0.0 cambia el método de cifrado para contraseñas. Después de que las credenciales de usuario de migración deben ser ingresadas de nuevo.",
+          "pl": "Release 2.0.0 zmienia metodę szyfrowania haseł. Po migracji należy ponownie wpisać dane uwierzytelniające użytkownika.",
+          "uk": "Release 2.0.0 змінює метод шифрування паролів. Після міграції облікових записів користувачів необхідно вводити знову.",
+          "zh-cn": "发布 2.0.0 更改密码的加密方法. 移民后,必须再次输入用户证书."
+        },
+        "link": "https://github.com/iobroker-community-adapters/ioBroker.tractive-gps#changelog",
+        "level": "warn",
+        "linkText": {
+          "en": "Changelog",
+          "de": "Änderungsprotokoll",
+          "ru": "Список изменений",
+          "pt": "Registro de alterações",
+          "nl": "Wijzigingslog",
+          "fr": "Journal des modifications",
+          "it": "Registro delle modifiche",
+          "es": "registro de cambios",
+          "pl": "Dziennik zmian",
+          "zh-cn": "变更日志",
+          "uk": "Журнал змін"
+        },
+        "buttons": [
+          "agree",
+          "cancel"
+        ]
+      }
     ]
   },
   "plugins": {
