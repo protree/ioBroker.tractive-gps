@@ -37,7 +37,7 @@ For more details and for information on how to disable error reporting, see.
 are used.
 
 ### Credits
-This adapter would not have been possible without the great work of @xXBJXx (https://github.com/xXBJXx), who created this adapter and will hopefully maintain it again in the near future.
+This adapter would not have been possible without the great work of @xXBJXx (https://github.com/xXBJXx), who created this adapter.
 
 ### Description
 This adapter allows you to connect to the Tractive GPS service and retrieve the location of your pets.
@@ -50,7 +50,6 @@ To use this adapter, you must have a Tractive account and have a tracker for you
 
 ### Installation
 The adapter is installed via the ioBroker adapter manager.
-**Caution:** The adapter requires at least `Node.js >= 16`, `js-controller 3.3.22` and `admin >=6`!
 After installation, you have to log in with your Tractive account and set the polling interval.
 The adapter will then fetch a token from the Tractive API and store it in the configuration.
 This token has an expiration time which will be renewed automatically when it expires.
@@ -85,8 +84,9 @@ Or you can use the tab **files** to upload the file. (see image below)
     ### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
-* (bluefox) Remove the old code and rewrite GUI
-* (bluefox) BREAKING CHANGE: Maybe you must enter your credentials again
+* (bluefox) BREAKING CHANGE: You must enter your credentials again
+* (bluefox) Old code has been removed and GUI has been rewritten
+* (bluefox) Dependencies have been updated
 
 ### 1.2.0 (2024-04-28)
 * (mcm1957) Adapter requires node.js >= 18 and js-controller >= 5 now
