@@ -83,6 +83,9 @@ Or you can use the tab **files** to upload the file. (see image below)
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (bluefox) Fixing encryption of the access token
+
 ### 2.0.0 (2024-08-18)
 * (bluefox) BREAKING CHANGE: You must enter your credentials again
 * (bluefox) Old code has been removed and GUI has been rewritten
