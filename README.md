@@ -83,7 +83,7 @@ Or you can use the tab **files** to upload the file. (see image below)
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 2.0.1 (2024-08-20)
 * (bluefox) Fixing encryption of the access token
 
 ### 2.0.0 (2024-08-18)
@@ -103,10 +103,6 @@ Or you can use the tab **files** to upload the file. (see image below)
 ### 1.0.0 (2023-11-04)
 * (mcm1957) Adapter has been moved into iobroker-community-adapters organisation
 * (mcm1957) Dependencies have been updated
-
-### 0.1.2 (2023-02-24)
-* (xXBJXx) Dependencies updated
-* (xXBJXx) UI updated
 
 ## License
 MIT License

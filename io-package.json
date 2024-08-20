@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "tractive-gps",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "news": {
+      "2.0.1": {
+        "en": "Fixing encryption of the access token",
+        "de": "Festlegen der Verschlüsselung des Zugriffstokens",
+        "ru": "Исправление шифрования токена доступа",
+        "pt": "Corrigir criptografia do token de acesso",
+        "nl": "Versleuteling van het toegangs token herstellen",
+        "fr": "Correction du chiffrement du jeton d'accès",
+        "it": "Fissare la crittografia del gettone di accesso",
+        "es": "Corrección del cifrado de acceso",
+        "pl": "Ustawienie szyfrowania symbolu dostępu",
+        "uk": "Виправлення шифрування токена доступу",
+        "zh-cn": "修复访问令牌的加密"
+      },
       "2.0.0": {
         "en": "BREAKING CHANGE: You must enter your credentials again\nOld code has been removed and GUI has been rewritten\nDependencies have been updated",
         "de": "BREAKING CHANGE: Sie müssen Ihre Anmeldeinformationen erneut eingeben\nDer alte Code wurde entfernt und GUI wurde neu geschrieben\nAbhängigkeiten wurden aktualisiert",
@@ -80,19 +93,6 @@
         "pl": "Zależności zaktualizowane\nUaktualniony interfejs użytkownika",
         "uk": "Оновлені залежності\nОновлений інтерфейс користувача",
         "zh-cn": "更新了依赖性\n更新了用户界面"
-      },
-      "0.1.1": {
-        "en": "Dependencies updated",
-        "de": "Abhängigkeiten aktualisiert",
-        "ru": "Обновление зависимостей",
-        "pt": "Dependências atualizadas",
-        "nl": "Afhankelijkheden bijgewerkt",
-        "fr": "Dépendances mises à jour",
-        "it": "Dipendenze aggiornate",
-        "es": "Dependencias actualizadas",
-        "pl": "Zależności zaktualizowane",
-        "uk": "Залежності оновлено",
-        "zh-cn": "依赖项已更新"
       }
     },
     "titleLang": {

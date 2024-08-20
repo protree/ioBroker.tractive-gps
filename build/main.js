@@ -510,7 +510,7 @@ class TractiveGPS extends utils.Adapter {
                 'Content-Type': 'application/json',
                 'x-tractive-client': this.client_id,
                 'x-tractive-user': this.allData.userInfo.user_id,
-                Authorization: `Bearer ${this.decrypt(this.config.access_token)}`,
+                Authorization: `Bearer ${this.config.access_token}`,
             },
         };
         try {
@@ -552,7 +552,7 @@ class TractiveGPS extends utils.Adapter {
                     'Content-Type': 'application/json',
                     'x-tractive-client': this.client_id,
                     'x-tractive-user': this.allData.userInfo.user_id,
-                    Authorization: `Bearer ${this.decrypt(this.config.access_token)}`,
+                    Authorization: `Bearer ${this.config.access_token}`,
                 },
             };
             try {
@@ -590,7 +590,7 @@ class TractiveGPS extends utils.Adapter {
                     'Content-Type': 'application/json',
                     'x-tractive-client': this.client_id,
                     'x-tractive-user': this.allData.userInfo.user_id,
-                    Authorization: `Bearer ${this.decrypt(this.config.access_token)}`,
+                    Authorization: `Bearer ${this.config.access_token}`,
                 },
             };
             try {
@@ -632,7 +632,7 @@ class TractiveGPS extends utils.Adapter {
                     'Content-Type': 'application/json',
                     'x-tractive-client': this.client_id,
                     'x-tractive-user': this.allData.userInfo.user_id,
-                    Authorization: `Bearer ${this.decrypt(this.config.access_token)}`,
+                    Authorization: `Bearer ${this.config.access_token}`,
                 },
             };
             try {
@@ -677,7 +677,7 @@ class TractiveGPS extends utils.Adapter {
                     'Content-Type': 'application/json',
                     'x-tractive-client': this.client_id,
                     'x-tractive-user': this.allData.userInfo.user_id,
-                    Authorization: `Bearer ${this.decrypt(this.config.access_token)}`,
+                    Authorization: `Bearer ${this.config.access_token}`,
                 },
             };
             try {
