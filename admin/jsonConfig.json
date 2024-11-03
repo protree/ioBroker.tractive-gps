@@ -1,6 +1,9 @@
 {
     "i18n": true,
     "type": "tabs",
+    "tabsStyle": {
+        "width": "calc(100% - 100px)"
+    },
     "items": {
         "_login": {
             "label": "settings_login",
@@ -11,7 +14,11 @@
                     "type": "header",
                     "size": 4,
                     "text": "settings_interval",
-                    "sm": 12
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
                 },
                 "interval": {
                     "type": "number",
@@ -19,48 +26,64 @@
                     "min": 1,
                     "help": "settings_sec",
                     "tooltip": "settings_interval_tooltip",
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
-                    "lg": 4
+                    "lg": 4,
+                    "xl": 4
                 },
                 "_header2": {
                     "newLine": true,
                     "type": "header",
                     "text": "settings_login",
                     "size": 4,
-                    "sm": 12
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
                 },
                 "email": {
                     "newLine": true,
                     "label": "emailInput_email",
                     "type": "text",
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
-                    "lg": 4
+                    "lg": 4,
+                    "xl": 4
                 },
                 "password": {
                     "type": "password",
                     "label": "settings_password",
                     "repeat": true,
+                    "xs": 12,
                     "sm": 12,
                     "md": 12,
-                    "lg": 8
+                    "lg": 8,
+                    "xl": 8
                 },
                 "_header3": {
                     "newLine": true,
                     "type": "header",
                     "text": "settings_token",
                     "size": 4,
-                    "sm": 12
+                    "xs": 12,
+                    "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12
                 },
                 "user_id": {
                     "newLine": true,
                     "label": "settings_user_id",
                     "type": "text",
                     "readOnly": true,
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
-                    "lg": 4
+                    "lg": 4,
+                    "xl": 4
                 },
                 "access_token": {
                     "newLine": true,
@@ -69,17 +92,21 @@
                     "repeat": "false",
                     "visible": true,
                     "readOnly": true,
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
-                    "lg": 4
+                    "lg": 4,
+                    "xl": 4
                 },
                 "expires_at": {
                     "label": "dateTime_token_expires_tooltip",
                     "type": "text",
                     "time": true,
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
-                    "lg": 4
+                    "lg": 4,
+                    "xl": 4
                 },
                 "_refreshToken": {
                     "type": "sendto",
@@ -91,9 +118,11 @@
                     "jsonData": "{\"email\": \"${data.email}\", \"password\": \"${data.password}\"}",
                     "useNative": true,
                     "title": "apiToken_refresh_description",
+                    "xs": 12,
                     "sm": 12,
                     "md": 6,
-                    "lg": 4
+                    "lg": 4,
+                    "xl": 4
                 }
             }
         },
@@ -103,8 +132,14 @@
             "items": {
                 "nameArray": {
                     "type": "table",
-                    "uniqueColumns": ["id"],
+                    "uniqueColumns": [
+                        "id"
+                    ],
+                    "xs": 12,
                     "sm": 12,
+                    "md": 12,
+                    "lg": 12,
+                    "xl": 12,
                     "items": [
                         {
                             "attr": "id",

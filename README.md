@@ -83,6 +83,9 @@ Or you can use the tab **files** to upload the file. (see image below)
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (simatec) Responsive Design added
+
 ### 2.0.1 (2024-08-20)
 * (bluefox) Fixing encryption of the access token
 
