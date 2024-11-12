@@ -109,7 +109,7 @@
                     "xl": 4
                 },
                 "_refreshToken": {
-                    "type": "sendto",
+                    "type": "sendTo",
                     "disabled": "!data.email || !data.password",
                     "variant": "contained",
                     "label": "apiToken_refresh",
