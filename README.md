@@ -84,8 +84,11 @@ Or you can use the tab **files** to upload the file. (see image below)
     ### **WORK IN PROGRESS**
 -->
 ### **WORK IN PROGRESS**
-* (simatec) Responsive Design added
-
+* (mcm1957) Adapter requires node 20 now.
+* (mcm1957) Adapter requires js-controller 5.0.19 and admin 6.17.14 now.
+* (simatec) Adapter adpteh to meet Responsive Design rules.
+* (mcm1957) Dependencies have been updated.
+* 
 ### 2.0.1 (2024-08-20)
 * (bluefox) Fixing encryption of the access token
 
