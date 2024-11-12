@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "tractive-gps",
-    "version": "2.0.1",
+    "version": "2.1.0",
     "news": {
+      "2.1.0": {
+        "en": "Adapter requires node 20 now.\nAdapter requires js-controller 5.0.19 and admin 6.17.14 now.\nAdapter changed to meet Responsive Design rules.\nAn error at jsonConfig invalidating reauthorization command has been corrected.\nDependencies have been updated.",
+        "de": "Adapter benötigt jetzt den Knoten 20.\nAdapter benötigt jetzt js-controller 5.0.19 und admin 6.17.14.\nAdapter geändert, um Responsive Design Regeln zu erfüllen.\nEin Fehler bei jsonConfig, der Reautorisierungsbefehl invalidiert, wurde behoben.\nAbhängigkeiten wurden aktualisiert.",
+        "ru": "Адаптер требует узла 20.\nАдаптер требует js-контроллер 5.0.19 и admin 6.17.14.\nАдаптер изменился, чтобы соответствовать правилам Responsive Design.\nИсправлена ошибка в jsonConfig, аннулирующая команду реавторизации.\nЗависимость была обновлена.",
+        "pt": "Adaptador requer nó 20 agora.\nAdaptador requer js-controller 5.0.19 e admin 6.17.14 agora.\nAdapter mudou para atender às regras de Design Responsável.\nFoi corrigido um erro no comando jsonConfig invalidating reauthorization.\nAs dependências foram atualizadas.",
+        "nl": "Adapter vereist node 20 nu.\nAdapter vereist js-controller 5.01.19 en admin 6.17.14 nu.\nAdapter veranderd om te voldoen aan Responsive Design regels.\nEen fout bij jsonConfig ongeldig maken van reauthorization commando is gecorrigeerd.\nAfhankelijkheden zijn bijgewerkt.",
+        "fr": "Adaptateur nécessite un noeud 20 maintenant.\nAdaptateur nécessite js-controller 5.0.19 et admin 6.17.14 maintenant.\nAdaptateur modifié pour respecter les règles de conception réactive.\nUne erreur à la commande jsonConfig invalidant la réautorisation a été corrigée.\nLes dépendances ont été actualisées.",
+        "it": "Adattatore richiede nodo 20 ora.\nAdattatore richiede js-controller 5.0.19 e admin 6.17.14 ora.\nAdattatore modificato per soddisfare le regole di Responsive Design.\nÈ stato corretto un errore al comando di riautorizzazione di jsonConfig invalidante.\nLe dipendenze sono state aggiornate.",
+        "es": "Adaptador requiere nodo 20 ahora.\nAdaptador requiere js-controller 5.0.19 y admin 6.17.14 ahora.\nAdaptador cambió para cumplir con las reglas de diseño responsable.\nSe ha corregido un error en el comando jsonConfig invalidating reauthorization.\nSe han actualizado las dependencias.",
+        "pl": "Adapter wymaga węzła 20.\nAdapter wymaga sterownika js- 5.0.19 i admin 6.17.14 teraz.\nAdapter zmienił się w celu spełnienia zasad Responsive Design.\nBłąd w jsonConfig unieważnienie polecenia reautoryzacji został poprawiony.\nZaktualizowano zależność.",
+        "uk": "Адаптер вимагає вузла 20 тепер.\nАдаптер вимагає js-controller 5.0.19 і admin 6.17.14 тепер.\nПерехідник змінився для дотримання правил адаптивного дизайну.\nВиправлено помилку в jsonConfig, що недійсне відновлення.\nОновлено залежність.",
+        "zh-cn": "适配器现在需要20号节点.\n适配器现在需要js控制器5.0.19和管理员6.17.14.\n适配器更改以满足应变设计规则.\nJsonConfig 无效重授权命令的错误已被更正 .\n附属关系已经更新."
+      },
       "2.0.1": {
         "en": "Fixing encryption of the access token",
         "de": "Festlegen der Verschlüsselung des Zugriffstokens",
@@ -80,19 +93,6 @@
         "pl": "Adapter został przeniesiony do iobrokerskiej organizacji\nZależności zostały zaktualizowane",
         "uk": "Переміщено перехід на iobroker-community-adapters\nОновлено залежність",
         "zh-cn": "现已进入加勒比采掘器组织\n已更新了属地"
-      },
-      "0.1.2": {
-        "en": "Dependencies updated\nUI updated",
-        "de": "Abhängigkeiten aktualisiert\nUI aktualisiert",
-        "ru": "Обновлены зависимости\nОбновлен пользовательский интерфейс",
-        "pt": "Dependências actualizadas\nUI actualizado",
-        "nl": "Afhankelijkheden bijgewerkt\nUI bijgewerkt",
-        "fr": "Dépendances mises à jour\nMise à jour de l'interface utilisateur",
-        "it": "Dipendenze aggiornate\nInterfaccia utente aggiornata",
-        "es": "Dependencias actualizadas\nInterfaz de usuario actualizada",
-        "pl": "Zależności zaktualizowane\nUaktualniony interfejs użytkownika",
-        "uk": "Оновлені залежності\nОновлений інтерфейс користувача",
-        "zh-cn": "更新了依赖性\n更新了用户界面"
       }
     },
     "titleLang": {
