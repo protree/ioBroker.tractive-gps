@@ -89,7 +89,7 @@
                     "newLine": true,
                     "label": "apiToken_accessToken",
                     "type": "password",
-                    "repeat": "false",
+                    "repeat": false,
                     "visible": true,
                     "readOnly": true,
                     "xs": 12,
